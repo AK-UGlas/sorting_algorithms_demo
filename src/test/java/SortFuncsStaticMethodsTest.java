@@ -8,6 +8,7 @@ public class SortFuncsStaticMethodsTest {
 
     private int[] unsorted = {-1, 5, -22, 3, 108, -651536, -2147483648, 4838, 219, 2147483647, 20, 0};
     private int[] sorted = {-2147483648, -651536, -22, -1, 0, 3, 5, 20, 108, 219, 4838, 2147483647};
+    private int[] almostSorted = {-2147483648, -651536, -22, -1, 0, 3, 5, 20, 108, 219, 2147483647, 4838};
 
     @Test
     public void canIdentifyUnsortedIntArray() {
@@ -17,5 +18,10 @@ public class SortFuncsStaticMethodsTest {
     @Test
     public void canIdentifySortedIntArray() {
         assertTrue(SortFuncs.isSorted(sorted));
+    }
+
+    @Test
+    public void canCorrectlyDetectSingleItemUnsorted() {
+        assertFalse(SortFuncs.isSorted(almostSorted));
     }
 }

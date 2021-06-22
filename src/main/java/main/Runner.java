@@ -8,6 +8,7 @@ import java.util.Random;
 public class Runner {
 
     /**
+     * Driver Code:
      * Script to demonstrate sorting algorithm time complexity.
      * The sorting algorithms come from the online Udemy.com course Data Structures and Algorithms: Deep Dive using Java
      * https://www.udemy.com/course/data-structures-and-algorithms-deep-dive-using-java/
@@ -49,7 +50,8 @@ public class Runner {
     }
 
     /**
-     * Generate a random int array of a certain length where max value is equal to array length
+     * Helper Method: Generate a random int array of a certain
+     * length where max value is equal to array length
      * @param length - the length of the array to create
      */
     public static int[] generateRandomArray(int length) {
@@ -62,12 +64,4 @@ public class Runner {
 
         return randArray;
     }
-
-    /**
-     * Check whether an array is sorted
-     *
-     * @param inArray the primitive integer array to be checked
-     * @return boolean
-     */
-
 }

@@ -14,7 +14,7 @@ public abstract class SortFuncs implements Sorting {
 
     // helper function - check array is sorted
     public static boolean isSorted(int[] inArray) {
-        for (int i = 0; i < inArray.length - 2; i++) {
+        for (int i = 0; i < inArray.length - 1; i++) {
             if (inArray[i] > inArray[i + 1]) {
                 return false;
             }
