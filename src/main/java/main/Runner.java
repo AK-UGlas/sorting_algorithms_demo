@@ -3,6 +3,8 @@ package main;
 import sorting.Bubble;
 import sorting.Merge;
 import sorting.SortFuncs;
+
+import java.util.Arrays;
 import java.util.Random;
 
 public class Runner {
@@ -17,8 +19,8 @@ public class Runner {
      */
     public static void main(String[] args) {
 
-        int[] unsorted = generateRandomArray(10);
-
+        int[] unsorted = generateRandomArray(10, -5, 25);
+        System.out.println(Arrays.toString(unsorted));
         // time how long it takes to sort the array using different sorting algorithms
         timeFunc(new Bubble(), unsorted);
         timeFunc(new Merge(), unsorted);
@@ -51,15 +53,18 @@ public class Runner {
 
     /**
      * Helper Method: Generate a random int array of a certain
-     * length where max value is equal to array length
+     * length where values lie between specific max and min values;
      * @param length - the length of the array to create
+     * @param min - minimum possible value
+     * @param max - maximum possible value
      */
-    public static int[] generateRandomArray(int length) {
+    public static int[] generateRandomArray(int length, int min, int max) {
         Random rand = new Random();
+        int range = max - min;
         int[] randArray = new int[length];
 
         for (int i = 0; i < length; i++) {
-            randArray[i] = rand.nextInt(length);
+            randArray[i] = rand.nextInt(range) + min;
         }
 
         return randArray;
